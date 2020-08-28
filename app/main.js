@@ -1,8 +1,8 @@
-import ListController from "./Controllers/ListController.js";
+import WineController from "./Controllers/WineController.js";
 
 //NOTE This should be good to go
 class App {
-  listController = new ListController();
+  WineController = new WineController();
 }
 
 window["app"] = new App();

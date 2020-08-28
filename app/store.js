@@ -1,26 +1,28 @@
-import List from "./Models/List.js";
+import Wine from "./Models/Wine.js";
 
 let _state = {
-  /** @type {List[]} */
-  lists: []
+  /** @type {Wine[]} */
+  wines: []
 };
+
+
+
 
 //NOTE You should not need to change the code from this point down
 
 //NOTE this method will get the lists from local storage at the start of the app
+
 function _loadState() {
   let data = JSON.parse(localStorage.getItem("TaskMaster"));
   if (data) {
-    data.lists = data.lists.map(l => new List(l));
+    data.wines = data.wines.map(l => new Wine(l));
     _state = data;
   }
 }
 _loadState();
 
 class Store {
-  /**
-   * Provides access to application state data
-   */
+
   get State() {
     return _state;
   }
