@@ -10,7 +10,7 @@ function _drawWine() {
 
 function drawFormWine() {
   let template = `
-  <div class="card my-3">
+  <div class="card my-3 new-wine-form">
   <h5 class="card-header">New Wine Style</h5>
   <div class="card-body">
       <form class="form-group" onsubmit="app.wineController.newStyle(event)">
@@ -35,8 +35,6 @@ export default class WineController {
     drawFormWine();
   }
 
-  //TODO: Your app will need the ability to create, and delete both lists and listItems
-
   newStyle(event) {
     event.preventDefault();
     let form = event.target
@@ -58,7 +56,13 @@ export default class WineController {
   }
 
   removeStyle(id) {
+    console.log(id);
     WineService.removeStyle(id)
+    _drawWine()
+    drawFormWine()
+  }
+  removeType(typeId, typeName) {
+    WineService.removeType(typeId, typeName)
     _drawWine()
   }
 

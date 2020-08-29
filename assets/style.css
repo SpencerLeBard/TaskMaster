@@ -2,6 +2,8 @@ body {
 min-height: 100vh; 
 display: flex; 
 flex-direction: column; 
+font-family: 'Pacifico' , cursive;
+background-color: wheat;
 }
 header{ 
 
@@ -11,4 +13,18 @@ flex-grow: 1;
 } 
 footer{ 
 
+}
+.new-wine-form{
+  max-width: 60vh;
+  background-color: rgb(255, 80, 255);
+  color: black;
+}
+
+.wine-card{
+  max-width: 75vh;
+font-family: 'Pasifico' , cursive;
+}
+
+.navbar{
+  background-color: purple;
 }

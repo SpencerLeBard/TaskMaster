@@ -1,7 +1,7 @@
 import { generateId } from "../utils.js";
 
 export default class Wine {
-  constructor({ id, style, type, }) {
+  constructor({ id, style, type, data }) {
     //Style = "white/full-bodied red , Type = Syrah
     this.id = id || generateId()
     this.style = style
@@ -11,8 +11,8 @@ export default class Wine {
   }
   get wineTemplate() {
     return `
-    <div class="card p-3 my-3">
-    <h5 class="card-header">${this.style}<i class="fa fa-trash 
+    <div class="card p-3 m-3 wine-card">
+    <h5 class="card-header">${this.style}<i class="fa fa-trash
     align-self-end" onclick="app.wineController.removeStyle('${this.id}')"></i></h5>
     <div class="card-body">
       <h5 class="card-title">${this.type}</h5>
@@ -20,11 +20,11 @@ export default class Wine {
     <form class="form-inline d-flex flex-direction-row" onsubmit="app.wineController.newType(event, '${this.id}')">
     <div class="form-group">
         <label for=""></label>
-        <input type="text" name="type" id="type" class="form-control" placeholder="Type..." aria-describedby="helpId">
+        <input type="text" name="type" id="type" class="form-control" placeholder="Type: (Ex: Sarah, Riesling)" aria-describedby="helpId">
         <button type= "submit">Add Type</button>
     </div>
 </form>
-    <div class="d-flex flex-direction-row col-12 flex-wrap">${this.typeTemplate}</div>
+    <div class="d-flex flex-direction-column col-12 flex-wrap">${this.typeTemplate}</div>
   </div>
     `
   }
@@ -33,7 +33,7 @@ export default class Wine {
   get typeTemplate() {
     let template = ""
     this.type.forEach(c => {
-      template += `<div class="col-3 my-1">
+      template += `<div class="col my-1">
     <div class="card">
       <div class="card-body">
         <p class="card-text">${c}</p>
