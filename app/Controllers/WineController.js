@@ -1,29 +1,26 @@
 import WineService from "../Services/WineService.js";
 import STORE from "../store.js"
-import store from "../store.js";
 
 //TODO Don't forget to render to the screen after every data change.
 function _drawWine() {
   let template = ""
   STORE.State.wines.forEach(b => template += b.wineTemplate)
-  document.getElementById("create-wine").innerHTML = template
+  document.getElementById("wine-tasks").innerHTML = template
 }
 
-function drawForm() {
+function drawFormWine() {
   let template = `
   <div class="card my-3">
-  <h5 class="card-header">New Wine</h5>
+  <h5 class="card-header">New Wine Style</h5>
   <div class="card-body">
-      <form class="form-group" onsubmit="app.WineController.newStyle(event)">
-          <label for="title">Title</label>
-          <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
-              placeholder="Title of post.....">
-          <div class="">
-              <label for="content">Content</label>
-              <textarea class="form-control" id="content" name="name" rows="3"></textarea>
-          </div>
-          <button class="btn btn-warning" type="submit">Post Wine</button>
-      </form>
+      <form class="form-group" onsubmit="app.wineController.newStyle(event)">
+          <label for="style">Style: (Example: Syrah, Sauvignon Blanc... etc.) </label>
+          <input type="text" class="form-control" name="style" id="style" aria-describedby="helpId"
+              placeholder="Style Here.....">
+         
+              <button class="btn btn-warning" type="submit">Add Wine Style</button>
+              </form>
+              </div>
   </div>
 </div>
   `
@@ -35,7 +32,34 @@ export default class WineController {
   constructor() {
     //NOTE: After the store loads, we can automatically call to draw the lists.
     _drawWine();
+    drawFormWine();
   }
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems
+
+  newStyle(event) {
+    event.preventDefault();
+    let form = event.target
+    let newPost = {
+      style: form.style.value,
+    }
+    WineService.newStyle(newPost)
+    _drawWine()
+    form.reset();
+  }
+
+  newType(event, typeid) {
+    event.preventDefault()
+    let form = event.target
+    let newType = form.type.value
+
+    WineService.newType(newType, typeid)
+    _drawWine()
+  }
+
+  removeStyle(id) {
+    WineService.removeStyle(id)
+    _drawWine()
+  }
+
 }
