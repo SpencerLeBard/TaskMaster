@@ -36,7 +36,8 @@ export default class Wine {
       template += `<div class="col my-1">
     <div class="card">
       <div class="card-body">
-        <p class="card-text">${c}</p>
+        <p class="card-text">    <label><input type="checkbox" name="checkbox" value="value"></label>
+        ${c}</p>
         <i class="fa fa-trash align-self-end" onclick="app.wineController.removeType('${this.id}', '${c}')"></i>
       </div>
     </div>
