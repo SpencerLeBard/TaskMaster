@@ -15,7 +15,6 @@ export default class Wine {
     <h5 class="card-header">${this.style}<i class="fa fa-trash
     align-self-end" onclick="app.wineController.removeStyle('${this.id}')"></i></h5>
     <div class="card-body">
-      <h5 class="card-title">${this.type}</h5>
     </div>
     <form class="form-inline d-flex flex-direction-row" onsubmit="app.wineController.newType(event, '${this.id}')">
     <div class="form-group">

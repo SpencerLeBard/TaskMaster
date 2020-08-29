@@ -10,7 +10,7 @@ function _drawWine() {
 
 function drawFormWine() {
   let template = `
-  <div class="card my-3 new-wine-form">
+  <div class="card my-3 new-wine-form shadow">
   <h5 class="card-header">New Wine Style</h5>
   <div class="card-body">
       <form class="form-group" onsubmit="app.wineController.newStyle(event)">
