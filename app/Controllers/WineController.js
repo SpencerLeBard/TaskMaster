@@ -18,7 +18,15 @@ function drawFormWine() {
           <input type="text" class="form-control" name="style" id="style" aria-describedby="helpId"
               placeholder="Style Here.....">
          
-              <button class="btn btn-warning" type="submit">Add Wine Style</button>
+              <button class="btn btn-danger" type="submit">Add Wine Style</button>
+
+              <select class ="bg-danger text-light"id="colorselector">
+              <option value="106" data-color="#A0522D">Red</option>
+              <option class ="bg-light" value="47" data-color="#CD5C5C" selected="selected">White</option>
+          </select>
+          <script>
+              $('#colorselector').colorselector();
+          </script>
               </form>
               </div>
   </div>
@@ -65,5 +73,4 @@ export default class WineController {
     WineService.removeType(typeId, typeName)
     _drawWine()
   }
-
 }
