@@ -12,7 +12,8 @@ main{
 flex-grow: 1;
 } 
 footer{ 
-
+background-color: purple;
+color: white;
 }
 .new-wine-form{
   max-width: 60vh;

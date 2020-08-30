@@ -11,8 +11,6 @@ class WineService {
   }
 
   newType(newType, wineid) {
-    // NOTE  when you find your wine that matches the id, you must access that found wines type property to push the newType to
-    //store.state.wines.find returns your found wine
     let wine = STORE.State.wines.find(c => c.id == wineid)
     wine.type.push(newType)
   }
