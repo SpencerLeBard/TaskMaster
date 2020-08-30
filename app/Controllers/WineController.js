@@ -1,8 +1,11 @@
 import WineService from "../Services/WineService.js";
 import STORE from "../store.js"
 
-//TODO Don't forget to render to the screen after every data change.
+//NOTE Don't forget to render to the screen after every data change
+
 function _drawWine() {
+  //NOTE
+  // STORE.saveState()
   let template = ""
   STORE.State.wines.forEach(b => template += b.wineTemplate)
   document.getElementById("wine-tasks").innerHTML = template

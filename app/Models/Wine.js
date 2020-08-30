@@ -4,14 +4,14 @@ export default class Wine {
   constructor({ id, style, type, data }) {
     this.id = id || generateId()
     //Withoutextra (below) line draws everything.  Extra Line cannot draw
-    this.id = data.id || generateId()
+    // this.id = data.id || generateId()
     //dalete thid line^^^^ for everything to work
-    //     this.id = data.id || generateId(); ======= Marks example (TASKMASTER)
     this.style = style
     this.type = type || []
+    this.data = data
   }
   get wineTemplate() {
-    return ` //html
+    return `
     <div class="card p-3 m-3 wine-card">
     <h5 class="card-header">${this.style}<i class="fa fa-trash
     align-self-end" onclick="app.wineController.removeStyle('${this.id}')"></i></h5>
