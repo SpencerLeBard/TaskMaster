@@ -2,8 +2,11 @@ import { generateId } from "../utils.js";
 
 export default class Wine {
   constructor({ id, style, type, data }) {
-    //Style = "white/full-bodied red , Type = Syrah
+    this.id = id || generateId()
+    //Withoutextra (below) line draws everything.  Extra Line cannot draw
     this.id = data.id || generateId()
+    //dalete thid line^^^^ for everything to work
+    //     this.id = data.id || generateId(); ======= Marks example (TASKMASTER)
     this.style = style
     this.type = type || []
   }
