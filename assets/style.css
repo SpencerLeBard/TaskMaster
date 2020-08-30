@@ -24,6 +24,7 @@ color: white;
 .wine-card{
   max-width: 75vh;
 font-family: 'Pasifico' , cursive;
+/* background-color: rgb(156, 40, 53); */
 }
 
 .navbar{

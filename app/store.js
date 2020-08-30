@@ -2,7 +2,7 @@ import Wine from "./Models/Wine.js";
 
 let _state = {
   /** @type {Wine[]} */
-  wines: []
+  wines: [new Wine({})]
 };
 
 
@@ -10,11 +10,11 @@ let _state = {
 //NOTE this method will get the lists from local storage at the start of the app
 
 function _loadState() {
-  let data = JSON.parse(localStorage.getItem("wines"));
-  if (data) {
-    data.wines = data.wines.map(l => new Wine(l));
-    _state = data;
-  }
+  let data = JSON.parse(localStorage.getItem("TaskMaster"))
+    ; if (data) {
+      data.wines = data.wines.map(l => new Wine(l));
+      _state = data;
+    }
 }
 _loadState();
 
@@ -25,9 +25,9 @@ class Store {
   }
 
   //NOTE call saveState everytime you change the state in any way
+
   saveState() {
-    localStorage.setItem("wines", JSON.stringify(_state));
-    this.saveState()
+    localStorage.setItem("TaskMaster", JSON.stringify(_state));
   }
 }
 

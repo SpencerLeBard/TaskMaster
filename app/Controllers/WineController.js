@@ -5,7 +5,7 @@ import STORE from "../store.js"
 
 function _drawWine() {
   //NOTE
-  // STORE.saveState()
+  STORE.saveState()
   let template = ""
   STORE.State.wines.forEach(b => template += b.wineTemplate)
   document.getElementById("wine-tasks").innerHTML = template
