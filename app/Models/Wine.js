@@ -11,7 +11,7 @@ export default class Wine {
     this.type = type || []
   }
   get wineTemplate() {
-    return `
+    return ` //html
     <div class="card p-3 m-3 wine-card">
     <h5 class="card-header">${this.style}<i class="fa fa-trash
     align-self-end" onclick="app.wineController.removeStyle('${this.id}')"></i></h5>
