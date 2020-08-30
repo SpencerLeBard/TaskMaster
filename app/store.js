@@ -10,7 +10,7 @@ let _state = {
 //NOTE this method will get the lists from local storage at the start of the app
 
 function _loadState() {
-  let data = JSON.parse(localStorage.getItem("wines"));
+  let data = JSON.parse(localStorage.getItem("wine-tasks"));
   if (data) {
     data.wines = data.wines.map(l => new Wine(l));
     _state = data;
@@ -26,7 +26,7 @@ class Store {
 
   //NOTE call saveState everytime you change the state in any way
   saveState() {
-    localStorage.setItem("wines", JSON.stringify(_state));
+    localStorage.setItem("wine-tasks", JSON.stringify(_state));
     this.saveState()
   }
 }
