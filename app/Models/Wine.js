@@ -6,6 +6,7 @@ export default class Wine {
     this.id = id || generateId()
     this.style = style
     this.type = type || []
+    this.data = data
 
 
   }
