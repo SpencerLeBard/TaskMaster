@@ -27,6 +27,7 @@ class Store {
   //NOTE call saveState everytime you change the state in any way
   saveState() {
     localStorage.setItem("wines", JSON.stringify(_state));
+    this.saveState()
   }
 }
 

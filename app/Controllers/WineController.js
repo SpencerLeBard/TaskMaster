@@ -14,8 +14,8 @@ function drawFormWine() {
   <h5 class="card-header">New Wine Style</h5>
   <div class="card-body">
       <form class="form-group" onsubmit="app.wineController.newStyle(event)">
-          <label for="style">Style: (Example: Syrah, Sauvignon Blanc... etc.) </label>
-          <input type="text" class="form-control" name="style" id="style" aria-describedby="helpId"
+          <label class="p-3" for="style">Style: (Example: Syrah, Sauvignon Blanc... etc.) </label>
+          <input class="p-1" type="text" class="form-control" name="style" id="style" aria-describedby="helpId"
               placeholder="Style Here.....">
          
               <button class="btn btn-danger" type="submit">Add Wine Style</button>
