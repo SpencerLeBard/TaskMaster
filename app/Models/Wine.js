@@ -3,12 +3,9 @@ import { generateId } from "../utils.js";
 export default class Wine {
   constructor({ id, style, type, data }) {
     //Style = "white/full-bodied red , Type = Syrah
-    this.id = id || generateId()
+    this.id = data.id || generateId()
     this.style = style
     this.type = type || []
-    this.data = data
-
-
   }
   get wineTemplate() {
     return `
